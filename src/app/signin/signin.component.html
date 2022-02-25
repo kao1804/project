@@ -1,0 +1,40 @@
+
+
+
+
+      <div class="content">
+        <div class="text-center">
+          <h1>Sign In</h1>
+          <h5>PLease enter your gmail & password</h5>
+        </div>
+        <form class="form">
+          <form  (submit)="onSubmit(form)" #form ="ngForm">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1"  [(ngModel)] ="message" name="email" required >
+            </div>
+  
+            <div class="alert" role="alert"  *ngIf="form.controls.email?.errors?.required">
+             Email is required
+            </div>
+            
+            <div><h5>We'll never share your email with anyone else.</h5></div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)] ="password" name="password">
+            </div>
+            <a routerLink="/welcome"><button type="submit" class="btn btn-primary" (click)="onClick(message)"  >Submit</button></a>
+          
+          </form>
+        </form>
+      </div>
+
+
+
+
+
+
+<!-- <p>Form value:</p>
+<pre>{{form.value | json}}</pre>
+<pre>{{userName.value | json}}</pre>
+<pre>{{ form.controls.emailName?.errors?.required | json }}</pre> -->
